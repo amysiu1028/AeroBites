@@ -9,5 +9,4 @@ export default function AirportDetail() {
             <h1>{ airport }</h1>
         </div>
     )
-    //fdsa
 }
