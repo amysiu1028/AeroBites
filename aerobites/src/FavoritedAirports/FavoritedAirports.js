@@ -1,5 +1,5 @@
-import './FavoritedAirports.css';
-import '../AirportCard/AirportCard';
+// import './FavoritedAirports.css';
+import AirportCard from '../AirportCard/AirportCard';
 
 export default function FavoritedAirports() {
     return (

@@ -1,13 +1,21 @@
 import './App.css';
 import Airports from '../Airports/Airports';
+import { Link, Routes, Route } from 'react-router-dom';
+import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
+import AirportDetail from '../AirportDetails/AirportDetail';
 
 function App() {
   return (
     <div className="App">
-      <header>AeroBites</header>
+      <header>
+        <Link to='/'><p>AeroBites</p></Link>
+        </header>
       {/* We can treat the header as a back to home button */}
-      <Airports />
-      
+      <Routes>
+        <Route path='/' element={<Airports />}/>
+        <Route path='/favorites' element={<FavoritedAirports />}/>
+        <Route path='/:Airport' element={<AirportDetail />}/>
+      </Routes>
     </div>
   );
 }
