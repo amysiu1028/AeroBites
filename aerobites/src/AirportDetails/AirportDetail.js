@@ -17,7 +17,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-function AirportDetails({ airports, toggleFavorite }) {
+export default function AirportDetail({ airports, toggleFavorite }) {
     // get airport name from the URL using useParams
     const { airportName } = useParams();
     const decodedName = decodeURIComponent(airportName);
@@ -56,4 +56,4 @@ function AirportDetails({ airports, toggleFavorite }) {
     );
 }
 
-export default AirportDetails;
+
