@@ -1,15 +1,36 @@
-import React, { useState } from 'react';
+
+
+import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Airports from '../Airports/Airports';
 import AirportDetail from '../AirportDetails/AirportDetail';
 import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
 import NotFound from '../NotFound/NotFound';
+// import getAirports from '../ApiCalls/ApiCalls'
 
   function App() {
     const [airports, setAirports] = useState([]);
 
-     // name is passed from AirportCard and AirportDetails when toggleFavorite is clicked
+   useEffect(() => {
+    fetch('http://localhost:3000')
+      .then(response => {
+        if(!response.ok) {
+            // throw new Error (`${error}: Failed to fetch data`)
+            console.log('error')
+        }
+        return response.json();
+    })
+      .then(data => {
+        setAirports(data)
+        console.log(airports)
+      })
+      .catch(error => {
+      console.log(error);
+      })
+    },[])
+
+    // name is passed from AirportCard and AirportDetails when toggleFavorite is clicked
     const toggleFavorite = (name) => {
         const updatedAirports = airports.map(airport => {
             if (airport.name === name) {
@@ -19,6 +40,8 @@ import NotFound from '../NotFound/NotFound';
         });
         setAirports(updatedAirports);   
     };
+
+
 
     // filter favorite airports so you just have an array of favorites
     const getFavoriteAirports = () => {

@@ -1,23 +1,7 @@
-// import './AirportDetail.css';
-// import { useParams } from 'react-router-dom';
-
-// export default function AirportDetail() {
-//     const airport = useParams().Airport;
-
-//     return (
-//         <div>
-//             <h1>{ airport }</h1>
-//         </div>
-//     )
-// }
-
-
-
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-export default function AirportDetail({ airports, toggleFavorite }) {
+export default function AirportDetails({ airports, toggleFavorite }) {
     // get airport name from the URL using useParams
     const { airportName } = useParams();
     const decodedName = decodeURIComponent(airportName);
@@ -34,7 +18,7 @@ export default function AirportDetail({ airports, toggleFavorite }) {
             <h2>{airport.name}</h2>
             {/* toggle favorite status */}
             <button onClick={() => toggleFavorite(airport.name)}>
-                {airport.isFavorite ? 'Unfavorite ❤️' : 'Favorite 🤍'}
+                {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
             </button>
             {/* display terminal and restaurants*/}
             {airport.terminals.map((terminal) => {
@@ -46,7 +30,7 @@ export default function AirportDetail({ airports, toggleFavorite }) {
                         <ul>
                             {/* map over the restaurants in each terminal */}
                             {terminal[terminalName].map((restaurant) => (
-                                <li>{restaurant}</li>
+                                <li key={terminalName}>{restaurant}</li>
                             ))}
                         </ul>
                     </div>
