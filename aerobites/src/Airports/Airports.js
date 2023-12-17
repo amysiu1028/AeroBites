@@ -1,15 +1,10 @@
 import React from 'react';
 import './Airports.css';
 import { useNavigate, Link } from 'react-router-dom';
-import getAirports from '../ApiCalls/ApiCalls';
 
-
-function Airports({ airports }) {
-    
-
+export default function Airports({ airports }) {
     // directs to page just like a link
     const navigate = useNavigate();
-
     const handleDropdownChange = (event) => {
         const selectedName = event.target.value;
         navigate(`/${encodeURIComponent(selectedName)}`);
@@ -30,4 +25,3 @@ function Airports({ airports }) {
     );
 }
 
-export default Airports;

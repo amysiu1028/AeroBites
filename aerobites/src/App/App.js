@@ -7,12 +7,12 @@ import Airports from '../Airports/Airports';
 import AirportDetail from '../AirportDetails/AirportDetail';
 import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
 import NotFound from '../NotFound/NotFound';
-// import getAirports from '../ApiCalls/ApiCalls'
+// import getAirports from '../ApiCalls/ApiCalls
 
-  function App() {
-    const [airports, setAirports] = useState([]);
+export default function App() {
+  const [airports, setAirports] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     fetch('http://localhost:3000')
       .then(response => {
         if(!response.ok) {
@@ -28,39 +28,35 @@ import NotFound from '../NotFound/NotFound';
       .catch(error => {
       console.log(error);
       })
-    },[])
+  },[])
 
-    // name is passed from AirportCard and AirportDetails when toggleFavorite is clicked
-    const toggleFavorite = (name) => {
-        const updatedAirports = airports.map(airport => {
-            if (airport.name === name) {
-                return { ...airport, isFavorite: !airport.isFavorite };
-            }
-            return airport;
-        });
-        setAirports(updatedAirports);   
-    };
+  // name is passed from AirportCard and AirportDetails when toggleFavorite is clicked
+  const toggleFavorite = (name) => {
+      const updatedAirports = airports.map(airport => {
+          if (airport.name === name) {
+              return { ...airport, isFavorite: !airport.isFavorite };
+          }
+          return airport;
+      });
+      setAirports(updatedAirports);   
+  };
 
+  // filter favorite airports so you just have an array of favorites
+  const getFavoriteAirports = () => {
+      return airports.filter(airport => airport.isFavorite);
+  };
 
-
-    // filter favorite airports so you just have an array of favorites
-    const getFavoriteAirports = () => {
-        return airports.filter(airport => airport.isFavorite);
-    };
-
-    return (
-            <main className='App'>
-                <header>
-                <Link to='/'><p>AeroBites</p></Link>
-                </header>
-                <Routes>
-                    <Route path="/" element={<Airports airports={airports} />} />
-                    <Route path="/:airportName" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
-                    <Route path="/favorites" element={<FavoritedAirports airports={getFavoriteAirports()} toggleFavorite={toggleFavorite} />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </main>
-    );
+  return (
+    <main className='App'>
+        <header>
+        <Link to='/'><p>AeroBites</p></Link>
+        </header>
+        <Routes>
+            <Route path="/" element={<Airports airports={airports} />} />
+            <Route path="/:airportName" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
+            <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports()} toggleFavorite={toggleFavorite} />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    </main>
+  );
 }
-
-export default App;
