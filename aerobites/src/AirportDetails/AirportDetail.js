@@ -14,7 +14,7 @@ export default function AirportDetails({ airports, toggleFavorite }) {
 
     return (
         <div className='airport-details'>
-            
+            <Link to="/favorites">Show Favorites</Link>
             <h2>{airport.name}</h2>
             {/* toggle favorite status */}
             <button onClick={() => toggleFavorite(airport.name)}>
@@ -29,8 +29,9 @@ export default function AirportDetails({ airports, toggleFavorite }) {
                         <h3>{terminalName}</h3>
                         <ul>
                             {/* map over the restaurants in each terminal */}
-                            {terminal[terminalName].map((restaurant) => (
-                                <li key={terminalName}>{restaurant}</li>
+                            {terminal[terminalName].map((restaurant, index) => (
+                                // need to create unique keys at some point
+                                <li id={terminalName} key={terminalName}>{restaurant}</li>
                             ))}
                         </ul>
                     </div>

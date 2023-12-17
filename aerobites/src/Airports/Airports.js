@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import './Airports.css';
+import { useNavigate, Link } from 'react-router-dom';
 import getAirports from '../ApiCalls/ApiCalls';
 
 
@@ -15,13 +16,16 @@ function Airports({ airports }) {
     };
 
     return (
-        <div className='airports-dropdown'>
-            <select onChange={handleDropdownChange} defaultValue="">
-                <option value="" disabled>Select an Airport</option>
-                {airports.map((airport) => (
-                    <option key={airport.name} value={airport.name}>{airport.name}</option>
-                ))}
-            </select>
+        <div className='airports-container'>
+            <Link to="/favorites">Show Favorites</Link>
+            <div className='airports-dropdown'>
+                <select className='airports-select' onChange={handleDropdownChange} defaultValue="">
+                    <option value="" disabled>Select an Airport</option>
+                    {airports.map((airport, index) => (
+                        <option id={airport.name} key={index} value={airport.name}>{airport.name}</option>
+                    ))}
+                </select>
+            </div>
         </div>
     );
 }

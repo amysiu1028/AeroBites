@@ -53,7 +53,6 @@ import NotFound from '../NotFound/NotFound';
                 <header>
                 <Link to='/'><p>AeroBites</p></Link>
                 </header>
-                <Link to="/favorites">Show Favorites</Link>
                 <Routes>
                     <Route path="/" element={<Airports airports={airports} />} />
                     <Route path="/:airportName" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
