@@ -17,12 +17,15 @@ import React from 'react';
 import AirportCard from '../AirportCard/AirportCard';
 import { Link } from 'react-router-dom';
                     //just the favorite airports
-const FavoriteAirports = ({ airports, toggleFavorite }) => {
+const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
+
+    const favoriteAirports = getFavoriteAirports();
+
     return (
         <div className="favorites">
             <h2>Favorited Airports</h2>
-            {airports.length > 0 ? (
-                airports.map(airport => (
+            {favoriteAirports.length > 0 ? (
+                favoriteAirports.map(airport => (
                     <AirportCard key={airport.name} airport={airport} toggleFavorite={toggleFavorite} />
                 ))
             ) : (
