@@ -49,7 +49,7 @@ export default function App() {
   return (
     <main className='App'>
         <header>
-        <Link to='/'><p>AeroBites</p></Link>
+        <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>AeroBites</Link>
         </header>
         <Routes>
             <Route path="/" element={<Airports airports={airports} />} />
