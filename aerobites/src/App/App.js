@@ -54,7 +54,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Airports airports={airports} />} />
             <Route path="/:airportName" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
-            <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports()} toggleFavorite={toggleFavorite} />} />
+            <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports} toggleFavorite={toggleFavorite} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     </main>
