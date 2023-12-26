@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './Airports.css';
 import lottie from "lottie-web";
+import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
 // import airplane from './airplane.json'
 
@@ -42,3 +43,14 @@ export default function Airports({ airports }) {
     );
 }
 
+
+
+Airports.propTypes = {
+    airports: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })
+    ).isRequired
+  }
+  

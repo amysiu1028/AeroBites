@@ -1,16 +1,3 @@
-// import './AirportCard.css'
-
-// export default function AirportCard() {
-//     return (
-//         <div>
-//             <h1>Denver Airport</h1>
-//             <p>Image of airport</p>
-//             <button>Back</button>
-//         </div>
-//     )
-// }
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -33,5 +20,15 @@ function AirportCard({ airport, toggleFavorite }) {
         </div>
     );
 }
+
+
+AirportCard.propTypes = {
+    airport: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        img_path: PropTypes.string.isRequired,  
+        isFavorite: PropTypes.bool.isRequired
+      }).isRequired,
+      toggleFavorite: PropTypes.func.isRequired
+  };
 
 export default AirportCard;

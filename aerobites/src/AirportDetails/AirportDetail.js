@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 
 export default function AirportDetails({ airports, toggleFavorite }) {
@@ -42,3 +43,15 @@ export default function AirportDetails({ airports, toggleFavorite }) {
 }
 
 
+AirportDetails.propTypes = {
+    airports: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            isFavorite: PropTypes.bool.isRequired,
+            terminals: PropTypes.arrayOf(
+                PropTypes.object
+            ) 
+        })
+    ).isRequired,
+    toggleFavorite: PropTypes.func.isRequired
+};
