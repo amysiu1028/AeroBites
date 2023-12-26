@@ -1,19 +1,6 @@
-// // import './FavoritedAirports.css';
-// import AirportCard from '../AirportCard/AirportCard';
-
-// export default function FavoritedAirports() {
-//     return (
-//         <div>
-//             <h1>Favorite Airport car</h1>
-//             {/* Our airport card components will go here   */}
-//             <AirportCard />
-//         </div>
-//     )
-// }
-
-
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import AirportCard from '../AirportCard/AirportCard';
 import { Link } from 'react-router-dom';
                     //just the favorite airports
@@ -34,5 +21,12 @@ const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
         </div>
     );
 };
+
+
+FavoriteAirports.propTypes = {
+    getFavoriteAirports: PropTypes.func.isRequired, 
+    toggleFavorite: PropTypes.func.isRequired       
+};
+
 
 export default FavoriteAirports;
