@@ -9,8 +9,8 @@ export default function Airports({ airports }) {
     // directs to page just like a link
     const navigate = useNavigate();
     const handleDropdownChange = (event) => {
-        const selectedName = event.target.value;
-        navigate(`/${encodeURIComponent(selectedName)}`);
+        const selectedId = event.target.value;
+        navigate(`/${(selectedId)}`);
     };
     const container = useRef(null); 
 
@@ -33,7 +33,7 @@ export default function Airports({ airports }) {
                 <select style={{ width: '15vw', height: '50px', borderRadius: '10px' }} className='airports-select' onChange={handleDropdownChange} defaultValue="">
                     <option value="" disabled>Select an Airport</option>
                     {airports.map((airport, index) => (
-                        <option id={airport.name} key={index} value={airport.name}>{airport.name}</option>
+                        <option id={airport.id} key={index} value={airport.id}>{airport.name}</option>
                     ))}
                 </select>
             </div>

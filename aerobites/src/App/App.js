@@ -7,26 +7,20 @@ import Airports from '../Airports/Airports';
 import AirportDetail from '../AirportDetails/AirportDetail';
 import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
 import NotFound from '../NotFound/NotFound';
+import { getAirports, getTerminals, getBusinesses } from '../ApiCalls/ApiCalls'
 // import getAirports from '../ApiCalls/ApiCalls
 
 export default function App() {
   const [airports, setAirports] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000')
-      .then(response => {
-        if(!response.ok) {
-            // throw new Error (`${error}: Failed to fetch data`)
-            console.log('error')
-        }
-        return response.json();
-    })
+    getAirports()
       .then(data => {
         setAirports(data)
-        console.log(airports)
+        // console.log(airports)
       })
       .catch(error => {
-      console.log(error);
+      // console.log(error);
       })
   },[])
 
@@ -53,7 +47,7 @@ export default function App() {
         </header>
         <Routes>
             <Route path="/" element={<Airports airports={airports} />} />
-            <Route path="/:airportName" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
+            <Route path="/:Id" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
             <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports} toggleFavorite={toggleFavorite} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
