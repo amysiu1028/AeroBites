@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "terminal_id": 1,
+        "businessName": "Atlanta Chophouse"
+        },
+        {
+        "id": 2,
+        "terminal_id": 2,
+        "businessName": "Auntie Anne's"
+        },
+        {
+        "id": 3,
+        "terminal_id": 3,
+        "businessName": "Burger King"
+        },
+        {
+        "id": 4,
+        "terminal_id": 4,
+        "businessName": "IHOP express"
+        },
+        {
+        "id": 5,
+        "terminal_id": 5,
+        "businessName": "Starbucks"
+        },
+        {
+        "id": 6,
+        "terminal_id": 6,
+        "businessName": "Atlanta Chophouse"
+        }
+]

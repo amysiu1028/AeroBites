@@ -49,7 +49,7 @@ describe('Airport Details', () => {
 
   it('should fetch and display terminals and businesses for a selected airport', () => {
       // Simulate selecting an airport
-      cy.get('.airports-select').select('someAirportId');
+      cy.get('.airports-select').select('Hartsfield-Jackson Atlanta International Airport');
 
       // Wait for the API calls to complete
       cy.wait('@getTerminals');
@@ -59,7 +59,31 @@ describe('Airport Details', () => {
     
       cy.get('.terminals-container').should('exist');
       cy.get('.businesses-container').should('exist');
+
+      // Check if specific terminals and businesses are rendered correctly
+      cy.contains('h3', 'Domestic Terminal').should('exist');
+      cy.contains('Atlanta Chophouse').should('exist');
+
+      cy.contains('h3', 'Concourse A').should('exist');
+      cy.contains('Auntie Anne\'s').should('exist');
+
+      cy.contains('h3', 'Concourse B').should('exist');
+      cy.contains('Burger King').should('exist');
+
+      cy.contains('h3', 'Concourse C').should('exist');
+      cy.contains('IHOP express').should('exist');
+
+      cy.contains('h3', 'Concourse D').should('exist');
+      cy.contains('Starbucks').should('exist');
+
+      cy.contains('h3', 'Concourse E').should('exist');
+      cy.contains('Atlanta Chophouse').should('exist');
+
+      // Check for a terminal with no businesses listed
+      cy.contains('h3', 'Concourse T').next().should('contain', 'No businesses listed for this terminal.');
+      cy.contains('h3', 'Concourse F - international').next().should('contain', 'No businesses listed for this terminal.');
+
   });
 
-  // Additional 
+   
 });

@@ -39,32 +39,70 @@ export default function AirportDetails({ airports, toggleFavorite }) {
     if (!airport) {
         return <div>Airport not found</div>;
     }
-    return (
+    // return (
         
+    //     <div className='airport-details'>
+    //         <Link to="/favorites">Show Favorites</Link>
+    //         <h2>{airport.name}</h2>
+    //         {/* toggle favorite status */}
+    //         <button onClick={() => toggleFavorite(airport.name)}>
+    //             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
+    //         </button>
+    //         {/* display terminal and restaurants*/}
+    //     {terminals.map(terminal => {
+    //         // get the terminal name
+    //         return (
+    //             <div>
+    //                 <h3>{terminal.terminalName}</h3>
+    //                 {businesses.map(business => {
+    //                     if(business.terminal_id === terminal.id){
+    //                         return (
+    //                             <h4>{business.businessName}</h4>
+    //                         )}
+    //                 })}
+    //             </div>
+    //         );
+    //     })}
+    //     </div>
+    // );
+    return (
         <div className='airport-details'>
-            <Link to="/favorites">Show Favorites</Link>
-            <h2>{airport.name}</h2>
-            {/* toggle favorite status */}
-            <button onClick={() => toggleFavorite(airport.name)}>
-                {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
-            </button>
-            {/* display terminal and restaurants*/}
-        {terminals.map(terminal => {
-            // get the terminal name
+          <Link to="/favorites">Show Favorites</Link>
+          <h2>{airport.name}</h2>
+          <button onClick={() => toggleFavorite(airport.name)}>
+            {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
+          </button>
+      
+
+          <div className='terminals-container'> {/* to wrap all of the terminals in a container */}
+          {terminals.map(terminal => {
+            // Filter businesses for the current terminal
+            const terminalBusinesses = businesses.filter(business => business.terminal_id === terminal.id);
+      
             return (
-                <div>
-                    <h3>{terminal.terminalName}</h3>
-                    {businesses.map(business => {
-                        if(business.terminal_id === terminal.id){
-                            return (
-                                <h4>{business.businessName}</h4>
-                            )}
-                    })}
+              <div key={terminal.id} className='terminal'>
+                <h3>{terminal.terminalName}</h3>
+                <div className='businesses-container'> {/* to wrap all of the businesses */}
+                {terminalBusinesses.length > 0 ? (
+                  <div className='businesses'>
+                    {terminalBusinesses.map(business => (
+                      <p key={business.id}>{business.businessName}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p>No businesses listed for this terminal.</p>
+                )}
                 </div>
+              </div>
             );
-        })}
+          })}
+            </div>
         </div>
-    );
+      );
+
+
+
+
 }
 
 
