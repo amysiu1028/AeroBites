@@ -1,4 +1,4 @@
-describe('Display headere on page load and drop down of airports', () => {
+describe('Display header on page load and drop down of airports', () => {
   beforeEach(() => {
     cy.intercept("GET", "http://localhost:8080", {
       // Replace 3000 with a more specific api name later?
@@ -45,22 +45,26 @@ describe('Airport Details', () => {
       // Visit the main page and wait for the airports to load
       cy.visit('http://localhost:3000');
       cy.wait('@getAirports');
-  });
 
-  it('should fetch and display terminals and businesses for a selected airport', () => {
       // Simulate selecting an airport
       cy.get('.airports-select').select('Hartsfield-Jackson Atlanta International Airport');
-
+      
       // Wait for the API calls to complete
       cy.wait('@getTerminals');
       cy.wait('@getBusinesses');
+  });
 
+  it('should display a airport name and favorite button that can be toggled', () => {
       // Check if Favorites button and link exists
+      cy.contains('h2', 'Show Favorites').should('exist');
       cy.contains('h2', 'Hartsfield-Jackson Atlanta International Airport').should('exist');
       cy.contains('button', 'Favorite 🤍').should('exist').click();
-      cy.contains('button', 'Favorite ❤️').should('exist');
+      cy.contains('button', 'Favorite ❤️').should('exist').click();
+      cy.contains('button', 'Favorite 🤍').should('exist');
+  })
 
-      // Check if the Favorite button works
+  it('should fetch and display terminals and businesses for a selected airport', () => {
+
       // Check if terminals and businesses are rendered correctly
       cy.get('.terminals-container').should('exist');
       cy.get('.businesses-container').should('exist');
@@ -90,5 +94,18 @@ describe('Airport Details', () => {
 
   });
 
+  it('should navigate the the favorites page and display favorite card', () => {
+      // Favorite and navigate to favorites
+      cy.contains('.favorite-button', 'Favorite 🤍').should('exist').click();
+      cy.contains('h2', 'Show Favorites').should('exist').click();
+
+      // What favorites page contains
+      cy.get('.airport-card').should('exist');
+      cy.contains('button', 'Unfavorite ❤️').should('exist')
+      cy.contains('h3', 'Hartsfield-Jackson Atlanta International Airport').should('exist')
+
+      //Should unfavorite
+      cy.contains('button', 'Unfavorite ❤️').click();
+  })
    
 });
