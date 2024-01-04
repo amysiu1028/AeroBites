@@ -1,0 +1,51 @@
+.show-favorites-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-bottom: 10px;
+ }
+ 
+ 
+ .airport-details button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+ }
+ 
+ 
+ 
+ 
+ .airport-details button:hover {
+    background-color: #007B9E; /* shade for hover */
+ }
+ 
+ 
+ /* Responsive adjustments for smaller screens */
+ @media (max-width: 480px) {
+    .airport-details .show-favorites-link {
+        font-size: 1em;
+    }
+    .airport-details button {
+        padding: 8px 16px;
+    }
+ }
+ 
+ 
+ /* Media Query for iPad screens */
+ @media (min-width: 768px) and (max-width: 1024px) {
+    .airport-details .show-favorites-link {
+        font-size: 1.4em;
+    }
+    .airport-details button {
+        padding: 12px 24px;
+        font-size: 1.1em;
+    }
+ }
+ 
