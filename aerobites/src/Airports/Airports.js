@@ -27,10 +27,10 @@ export default function Airports({ airports }) {
     return (
         <div className='airports-container'>
             <Link to="/favorites" id='show-favorites'>
-                <button style={{ width: '40%', height: '50px', borderRadius: '30px' }}>Show Favorites</button>
+                <button>Show Favorites</button>
             </Link>
             <div className='airports-dropdown'>
-                <select style={{ width: '15vw', height: '50px', borderRadius: '10px' }} className='airports-select' onChange={handleDropdownChange} defaultValue="">
+                <select className='airports-select' onChange={handleDropdownChange} defaultValue="">
                     <option value="" disabled>Select an Airport</option>
                     {airports.map((airport, index) => (
                         <option id={airport.id} key={index} value={airport.id}>{airport.name}</option>

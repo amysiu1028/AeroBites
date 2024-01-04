@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
 import { getTerminals, getBusinesses } from '../ApiCalls/ApiCalls';
+import "./AirportDetail.css"
 
 export default function AirportDetails({ airports, toggleFavorite }) {
     // get airport name from the URL using useParams
@@ -13,61 +14,70 @@ export default function AirportDetails({ airports, toggleFavorite }) {
     const [terminals, setTerminals ] = useState([]);
     const [businesses, setBusinesses] = useState([]);
 
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         try {
+    //             // First, fetch terminals data
+    //             const terminalsData = await getTerminals();
+    //             const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
+    //             setTerminals(filteredTerminals);
+    //             // Check if there are terminals to fetch businesses for
+    //             if (filteredTerminals.length > 0) {
+    //                 const businessesData = await getBusinesses();
+    //                 const filteredBusinesses = businessesData.filter(business =>
+    //                     filteredTerminals.find(terminal => terminal.id === business.terminal_id)
+    //                 );
+    //                 setBusinesses(filteredBusinesses);
+    //             }
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     }
+    //     fetchData();
+    // }, [airportId]);
+
+
     useEffect(() => {
-        async function fetchData() {
-            try {
-                // First, fetch terminals data
-                const terminalsData = await getTerminals();
-                const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
-                setTerminals(filteredTerminals);
-                // Check if there are terminals to fetch businesses for
-                if (filteredTerminals.length > 0) {
-                    const businessesData = await getBusinesses();
-                    const filteredBusinesses = businessesData.filter(business =>
-                        filteredTerminals.find(terminal => terminal.id === business.terminal_id)
-                    );
-                    setBusinesses(filteredBusinesses);
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchData();
-    }, [airportId]);
+      async function fetchData() {
+          try {
+              const terminalsData = await getTerminals();
+              console.log('Terminals Data:', terminalsData);
+
+              const businessesData = await getBusinesses();
+              console.log('Businesses Data:', businessesData);
+
+              const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
+              console.log('Filtered Terminals:', filteredTerminals);
+
+              const terminalsWithBusinesses = filteredTerminals.map(terminal => {
+                  const businessesForTerminal = businessesData.filter(business => business.terminal_id === terminal.id);
+                  return { ...terminal, businesses: businessesForTerminal };
+              });
+              console.log('TerminalsWithBusinesses:', terminalsWithBusinesses);
+
+              setTerminals(terminalsWithBusinesses);
+          } catch (error) {
+              console.error(error);
+          }
+      }
+      fetchData();
+  }, [airportId]);
+
+
+
+
+
+
+
 
     // airport is not found
     if (!airport) {
         return <div>Airport not found</div>;
     }
-    // return (
-        
-    //     <div className='airport-details'>
-    //         <Link to="/favorites">Show Favorites</Link>
-    //         <h2>{airport.name}</h2>
-    //         {/* toggle favorite status */}
-    //         <button onClick={() => toggleFavorite(airport.name)}>
-    //             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
-    //         </button>
-    //         {/* display terminal and restaurants*/}
-    //     {terminals.map(terminal => {
-    //         // get the terminal name
-    //         return (
-    //             <div>
-    //                 <h3>{terminal.terminalName}</h3>
-    //                 {businesses.map(business => {
-    //                     if(business.terminal_id === terminal.id){
-    //                         return (
-    //                             <h4>{business.businessName}</h4>
-    //                         )}
-    //                 })}
-    //             </div>
-    //         );
-    //     })}
-    //     </div>
-    // );
+   
     return (
         <div className='airport-details'>
-          <Link to="/favorites">Show Favorites</Link>
+          <Link to="/favorites" className="show-favorites-link">Show Favorites</Link>
           <h2>{airport.name}</h2>
           <button onClick={() => toggleFavorite(airport.name)}>
             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}

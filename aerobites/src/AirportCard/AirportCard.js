@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './AirportCard.css';
 
 
                     //components passed from FavoriteAirports
@@ -12,10 +13,9 @@ function AirportCard({ airport, toggleFavorite }) {
                 {airport.isFavorite ? 'Unfavorite ❤️' : 'Favorite 🤍'}
             </button>
             <div>
-                <Link to={`/${encodeURIComponent(airport.name)}`}>
-                    <img src={airport.img_path} alt={airport.name} style={{ width: '100px', height: 'auto' }} />
-                </Link>
+                <Link to={`/${encodeURIComponent(airport.id)}`}>
                 <h3>{airport.name}</h3>
+                </Link>
             </div>
         </div>
     );
