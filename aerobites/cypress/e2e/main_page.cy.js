@@ -96,16 +96,23 @@ describe('Airport Details', () => {
 
   it('should navigate the the favorites page and display favorite card', () => {
       // Favorite and navigate to favorites
+      
       cy.contains('.favorite-button', 'Favorite 🤍').should('exist').click();
       cy.contains('h2', 'Show Favorites').should('exist').click();
-
       // What favorites page contains
-      cy.get('.airport-card').should('exist');
-      cy.contains('button', 'Unfavorite ❤️').should('exist')
-      cy.contains('h3', 'Hartsfield-Jackson Atlanta International Airport').should('exist')
+      cy.contains('h2', 'Favorited Airports')
+      cy.get('.fav-airport-cont').children().should('have.length', 2);
+      cy.get('.airport-card').first().should('contain', 'Hartsfield-Jackson Atlanta International Airport')
+      cy.get('.airport-card').first().should('contain', 'Unfavorite ❤️')
+      cy.get('.airport-card').last().should('contain', 'Dallas-Fort Worth International Airport')
+      cy.get('.airport-card').last().should('contain', 'Unfavorite ❤️')
 
-      //Should unfavorite
+      //Should unfavorite and clear
       cy.contains('button', 'Unfavorite ❤️').click();
+      cy.get('.fav-airport-cont').children().should('have.length', 1);
+      cy.get('.airport-card').first().should('contain', 'Dallas-Fort Worth International Airport')
+      cy.get('.airport-card').first().should('contain', 'Unfavorite ❤️')
+
   })
    
 });
