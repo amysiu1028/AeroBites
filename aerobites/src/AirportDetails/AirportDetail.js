@@ -69,7 +69,7 @@ export default function AirportDetails({ airports, toggleFavorite }) {
         <div className='airport-details'>
           <Link to="/favorites">Show Favorites</Link>
           <h2>{airport.name}</h2>
-          <button onClick={() => toggleFavorite(airport.name)}>
+          <button className='favorite-button' onClick={() => toggleFavorite(airport.name)}>
             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
           </button>
       

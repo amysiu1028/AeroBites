@@ -5,7 +5,7 @@ describe('Display headere on page load and drop down of airports', () => {
         statusCode: 200, 
         fixture: 'airportdata.json'
     })
-    cy.visit("http://localhost:3001")
+    cy.visit("http://localhost:3000")
   })
 
   it('should display Aerobites', () => {
@@ -28,7 +28,7 @@ it('should display a dropdown with airports', () => {
 
 
 
-//Testing the terminals and business 
+//Testing the terminals and business and favorite button
 
 describe('Airport Details', () => {
   beforeEach(() => {
@@ -43,7 +43,7 @@ describe('Airport Details', () => {
         fixture: 'businessesdata.json' }).as('getBusinesses');
 
       // Visit the main page and wait for the airports to load
-      cy.visit('http://localhost:3001');
+      cy.visit('http://localhost:3000');
       cy.wait('@getAirports');
   });
 
@@ -55,8 +55,13 @@ describe('Airport Details', () => {
       cy.wait('@getTerminals');
       cy.wait('@getBusinesses');
 
+      // Check if Favorites button and link exists
+      cy.contains('h2', 'Hartsfield-Jackson Atlanta International Airport').should('exist');
+      cy.contains('button', 'Favorite 🤍').should('exist').click();
+      cy.contains('button', 'Favorite ❤️').should('exist');
+
+      // Check if the Favorite button works
       // Check if terminals and businesses are rendered correctly
-    
       cy.get('.terminals-container').should('exist');
       cy.get('.businesses-container').should('exist');
 
