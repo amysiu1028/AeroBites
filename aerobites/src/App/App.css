@@ -23,8 +23,8 @@ header {
 }
 
 
-body {background-color: rgb(17, 15, 21);
-  
+body {
+  background-color: rgb(17, 15, 21);
   margin: 0;
   padding: 0;
   color: white; /* Set default text color to white */
@@ -32,3 +32,16 @@ body {background-color: rgb(17, 15, 21);
 }
 
 
+/* Media Query for iPhone screens */
+@media (max-width: 480px) {
+  header {
+    font-size: 60px; 
+  }
+}
+
+/* Media Query for iPad screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    font-size: 80px; 
+  }
+}
