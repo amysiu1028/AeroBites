@@ -1,32 +1,97 @@
 [
     {
-        "id": 1,
-        "terminal_id": 1,
-        "businessName": "Atlanta Chophouse"
+    "id": 1,
+    "terminal_id": 1,
+    "businessName": "Atlanta Chophouse"
+    },
+    {
+    "id": 2,
+    "terminal_id": 1,
+    "businessName": "Auntie Anne's"
+    },
+    {
+    "id": 3,
+    "terminal_id": 2,
+    "businessName": "Asian Chao"
+    },
+    {
+    "id": 4,
+    "terminal_id": 3,
+    "businessName": "Asian Chao"
+    },
+    {
+    "id": 5,
+    "terminal_id": 4,
+    "businessName": "Atlanta Bread Company"
+    },
+    {
+    "id": 6,
+    "terminal_id": 5,
+    "businessName": "4040 Club"
+    },
+    {
+    "id": 7,
+    "terminal_id": 1,
+    "businessName": "Burger King"
+    },
+    {
+    "id": 8,
+    "terminal_id": 6,
+    "businessName": "Arby's"
+    },
+    {
+    "id": 9,
+    "terminal_id": 2,
+    "businessName": "Atlanta Bread & Bar"
+    },
+    {
+    "id": 10,
+    "terminal_id": 1,
+    "businessName": "Ecco"
+    },
+    {
+    "id": 11,
+    "terminal_id": 9,
+    "businessName": "Atlanta Stillhouse"
+    },
+    {
+    "id": 12,
+    "terminal_id": 10,
+    "businessName": "Atlanta Bread Company Kiosk"
+    },
+    {
+    "id": 13,
+    "terminal_id": 11,
+    "businessName": "Auntie Anne’s"
+    },
+    {
+    "id": 14,
+    "terminal_id": 12,
+    "businessName": "IHOP express"
+    },
+    {
+    "id": 15,
+    "terminal_id": 13,
+    "businessName": "Boar's Head Kiosk"
+    },
+    {
+    "id": 16,
+    "terminal_id": 14,
+    "businessName": "Asian Chao"
+    },
+    {
+        "id": 17,
+        "terminal_id": 15,
+        "businessName": "Atlanta Hawks Bar & Grill"
         },
         {
-        "id": 2,
-        "terminal_id": 2,
-        "businessName": "Auntie Anne's"
+        "id": 18,
+        "terminal_id": 16,
+        "businessName": "Lorena Garcia Tapas"
         },
         {
-        "id": 3,
-        "terminal_id": 3,
-        "businessName": "Burger King"
-        },
-        {
-        "id": 4,
-        "terminal_id": 4,
-        "businessName": "IHOP express"
-        },
-        {
-        "id": 5,
-        "terminal_id": 5,
-        "businessName": "Starbucks"
-        },
-        {
-        "id": 6,
-        "terminal_id": 6,
-        "businessName": "Atlanta Chophouse"
+        "id": 19,
+        "terminal_id": 16,
+        "businessName": "Auntie Annie's"
         }
 ]

@@ -30,7 +30,8 @@
     {
         "id": 8, 
         "airport_id": 1, 
-        "terminalName": "Concourse F - international"},
+        "terminalName": "Concourse F - international"
+    },
     {
         "id": 9, 
         "airport_id": 2, 
@@ -53,67 +54,14 @@
         "terminalName": "Terminal E"},
     {
         "id": 14, 
-        "airport_id": 3, 
+        "airport_id": 2, 
         "terminalName": "Concourse A"},
     {
         "id": 15, 
-        "airport_id": 3, 
+        "airport_id": 2, 
         "terminalName": "Concourse B"},
     {
         "id": 16, 
-        "airport_id": 3, 
-        "terminalName": "Concourse C Auntie Anne's Pretzels (C26)"},
-    {
-        "id": 17, 
-        "airport_id": 4, 
-        "terminalName": "Terminal 1"},
-    {
-        "id": 18, 
-        "airport_id": 4, 
-        "terminalName": "Terminal 2"},
-    {
-        "id": 19, 
-        "airport_id": 4, 
-        "terminalName": "Terminal 3"},
-    {
-        "id": 20, 
-        "airport_id": 4, 
-        "terminalName": "Terminal 5"},
-    {
-        "id": 21, 
-        "airport_id": 5, 
-        "terminalName": "Terminal 1 (Gates)"},
-    {
-        "id": 22, 
-        "airport_id": 5, 
-        "terminalName": "Terminal 1 (B Gates)"},
-    {
-        "id": 23, 
-        "airport_id": 5, 
-        "terminalName": "Terminal 1 (C Gates)"},
-    {
-        "id": 24, 
-        "airport_id": 5, 
-        "terminalName": "Terminal 1 (D Gates)"},
-    {
-        "id": 25, 
-        "airport_id": 6, 
-        "terminalName": "Main Terminal"},
-    {
-        "id": 26, 
-        "airport_id": 6, 
-        "terminalName": "Airside 1 (Gates 1-29)"},
-    {
-        "id": 27, 
-        "airport_id": 6, 
-        "terminalName": "Airside 2 (Gates 100-129)"},
-    {
-        "id": 28, 
-        "airport_id": 6, 
-        "terminalName": "Airside 3 (Gates 30-59)"},
-    {
-        "id": 
-        29, "airport_id": 6, 
-        "terminalName": "Airside 4 (Gates 70-99)"}
-  ]
-  
+        "airport_id": 2, 
+        "terminalName": "Concourse C Auntie Anne's Pretzels (C26)"}
+]

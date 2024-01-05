@@ -8,25 +8,5 @@
     "id": 2,
     "name": "Dallas-Fort Worth International Airport",
     "isFavorite": true
-    },
-    {
-    "id": 3,
-    "name": "Denver International Airport",
-    "isFavorite": false
-    },
-    {
-    "id": 4,
-    "name": "Chicago’s O’Hare International Airport",
-    "isFavorite": false
-    },
-    {
-    "id": 5,
-    "name": "Harry Reid International Airport in Las Vegas",
-    "isFavorite": false
-    },
-    {
-    "id": 6,
-    "name": "Orlando International Airport",
-    "isFavorite": false
     }
 ]
