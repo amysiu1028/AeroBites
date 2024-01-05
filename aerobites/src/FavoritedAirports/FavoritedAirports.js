@@ -33,6 +33,7 @@ const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
             ) : (
                 <p>No favorites yet</p>
             )}
+            </div>
         </div>
        <div ref={container} id="animation-container">
             </div>
