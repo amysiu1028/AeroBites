@@ -12,9 +12,6 @@ function AirportCard({ airport, toggleFavorite }) {
                 {airport.isFavorite ? 'Unfavorite ❤️' : 'Favorite 🤍'}
             </button>
             <div>
-                <Link to={`/${encodeURIComponent(airport.name)}`}>
-                    <img src={airport.img_path} alt={airport.name} style={{ width: '100px', height: 'auto' }} />
-                </Link>
                 <h3>{airport.name}</h3>
             </div>
         </div>

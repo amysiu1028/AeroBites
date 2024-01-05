@@ -11,13 +11,15 @@ const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
     return (
         <div className="favorites">
             <h2>Favorited Airports</h2>
-            {favoriteAirports.length > 0 ? (
+            <div className='fav-airport-cont'>
+                {favoriteAirports.length > 0 ? (
                 favoriteAirports.map(airport => (
                     <AirportCard key={airport.name} airport={airport} toggleFavorite={toggleFavorite} />
                 ))
             ) : (
                 <p>No favorites yet</p>
             )}
+            </div>
         </div>
     );
 };
