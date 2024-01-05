@@ -8,15 +8,27 @@ header {
   margin: none;
   font-family: 'sacramento';
   color: white;
+
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(17, 15, 21);
+  z-index: 100; /* to ensure it's on top of other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds depth */
+  padding: 10px 0; /* Adjust as needed */
 }
 
 
-body {
-  background-color: black; /* Set the background color for the entire app */
+body {background-color: rgb(17, 15, 21);
+  
   margin: 0;
   padding: 0;
-  font-family: /* your font-family */;
   color: white; /* Set default text color to white */
+  margin-top: 170px;
 }
 
 

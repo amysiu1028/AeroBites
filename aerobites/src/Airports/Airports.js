@@ -25,6 +25,7 @@ export default function Airports({ airports }) {
 
     return (
         <div className='airports-container'>
+            <div className='controls-container'>
             <Link to="/favorites" id='show-favorites'>
                 <button>Show Favorites</button>
             </Link>
@@ -36,8 +37,8 @@ export default function Airports({ airports }) {
                     ))}
                 </select>
             </div>
-            <div ref={container} id="animation-container">
-            </div>
+            <div ref={container} id="animation-container"></div>
+            </div>  
         </div>
     );
 }
