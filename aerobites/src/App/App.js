@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Airports from '../Airports/Airports';
@@ -8,10 +8,13 @@ import AirportDetail from '../AirportDetails/AirportDetail';
 import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
 import NotFound from '../NotFound/NotFound';
 import { getAirports, getTerminals, getBusinesses } from '../ApiCalls/ApiCalls'
+
 // import getAirports from '../ApiCalls/ApiCalls
 
 export default function App() {
   const [airports, setAirports] = useState([]);
+    const [error, setError] = useState("")
+
 
   useEffect(() => {
     getAirports()
@@ -20,7 +23,7 @@ export default function App() {
         // console.log(airports)
       })
       .catch(error => {
-      // console.log(error);
+      setError(error.message);
       })
   },[])
 
@@ -51,6 +54,7 @@ export default function App() {
             <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports} toggleFavorite={toggleFavorite} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
+        {error && <h2>Something happened with getting the airports.</h2> }
     </main>
   );
 }
