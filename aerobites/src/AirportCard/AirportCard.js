@@ -21,8 +21,7 @@ export default  function AirportCard({ airport, toggleFavorite }) {
 
 AirportCard.propTypes = {
     airport: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        img_path: PropTypes.string.isRequired,  
+        name: PropTypes.string.isRequired, 
         isFavorite: PropTypes.bool.isRequired
       }).isRequired,
       toggleFavorite: PropTypes.func.isRequired
