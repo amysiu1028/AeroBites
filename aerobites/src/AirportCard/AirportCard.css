@@ -17,12 +17,15 @@
  .airport-card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
-  
+    
  }
  
+  .link:hover {
+    text-decoration: underline; /* optional: if you want underline on hover */
+}
  
  .airport-card button {
-    background-color: #008CBA;
+    background-color: #AEC5C4;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -45,3 +48,8 @@
     background-color: transparent;
  }
  
+
+ .link {
+    text-decoration: none;
+    color: rgb(17, 15, 21);
+ }
