@@ -1,11 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './AirportCard.css';
 
-
-                    //components passed from FavoriteAirports
-function AirportCard({ airport, toggleFavorite }) {
+export default  function AirportCard({ airport, toggleFavorite }) {
     //  a card with airport details and favorite toggle button
     return (
         <div className='airport-card'>
@@ -31,4 +28,3 @@ AirportCard.propTypes = {
       toggleFavorite: PropTypes.func.isRequired
   };
 
-export default AirportCard;

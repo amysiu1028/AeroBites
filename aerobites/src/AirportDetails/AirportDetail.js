@@ -5,72 +5,34 @@ import { getTerminals, getBusinesses } from '../ApiCalls/ApiCalls';
 import "./AirportDetail.css"
 
 export default function AirportDetails({ airports, toggleFavorite }) {
-    // get airport name from the URL using useParams
     const preairportId = useParams().Id
     const airportId = parseInt(preairportId)
-    // console.log(airportId, 'airportId')
-    // const decodedName = decodeURIComponent(airportId);
     const airport = airports.find(a => a.id === airportId);
     const [terminals, setTerminals ] = useState([]);
     const [businesses, setBusinesses] = useState([]);
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             // First, fetch terminals data
-    //             const terminalsData = await getTerminals();
-    //             const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
-    //             setTerminals(filteredTerminals);
-    //             // Check if there are terminals to fetch businesses for
-    //             if (filteredTerminals.length > 0) {
-    //                 const businessesData = await getBusinesses();
-    //                 const filteredBusinesses = businessesData.filter(business =>
-    //                     filteredTerminals.find(terminal => terminal.id === business.terminal_id)
-    //                 );
-    //                 setBusinesses(filteredBusinesses);
-    //             }
-    //         } catch (error) {
-    //             console.error(error);
-    //         }
-    //     }
-    //     fetchData();
-    // }, [airportId]);
-
-
     useEffect(() => {
-      async function fetchData() {
-          try {
-              const terminalsData = await getTerminals();
-              console.log('Terminals Data:', terminalsData);
+        async function fetchData() {
+            try {
+                // First, fetch terminals data
+                const terminalsData = await getTerminals();
+                const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
+                setTerminals(filteredTerminals);
+                // Check if there are terminals to fetch businesses for
+                if (filteredTerminals.length > 0) {
+                    const businessesData = await getBusinesses();
+                    const filteredBusinesses = businessesData.filter(business =>
+                        filteredTerminals.find(terminal => terminal.id === business.terminal_id)
+                    );
+                    setBusinesses(filteredBusinesses);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData();
+    }, [airportId]);
 
-              const businessesData = await getBusinesses();
-              console.log('Businesses Data:', businessesData);
-
-              const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
-              console.log('Filtered Terminals:', filteredTerminals);
-
-              const terminalsWithBusinesses = filteredTerminals.map(terminal => {
-                  const businessesForTerminal = businessesData.filter(business => business.terminal_id === terminal.id);
-                  return { ...terminal, businesses: businessesForTerminal };
-              });
-              console.log('TerminalsWithBusinesses:', terminalsWithBusinesses);
-
-              setTerminals(terminalsWithBusinesses);
-          } catch (error) {
-              console.error(error);
-          }
-      }
-      fetchData();
-  }, [airportId]);
-
-
-
-
-
-
-
-
-    // airport is not found
     if (!airport) {
         return <div>Airport not found</div>;
     }
@@ -82,8 +44,6 @@ export default function AirportDetails({ airports, toggleFavorite }) {
           <button className='favorite-button' onClick={() => toggleFavorite(airport.name)}>
             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
           </button>
-      
-
           <div className='terminals-container'> {/* to wrap all of the terminals in a container */}
           {terminals.map(terminal => {
             // Filter businesses for the current terminal
@@ -109,10 +69,6 @@ export default function AirportDetails({ airports, toggleFavorite }) {
             </div>
         </div>
       );
-
-
-
-
 }
 
 

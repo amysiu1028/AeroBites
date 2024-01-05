@@ -3,7 +3,6 @@ import './Airports.css';
 import lottie from "lottie-web";
 import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
-// import airplane from './airplane.json'
 
 export default function Airports({ airports }) {
     // directs to page just like a link
