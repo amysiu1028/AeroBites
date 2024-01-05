@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
+import lottie from "lottie-web";
 import { getTerminals, getBusinesses } from '../ApiCalls/ApiCalls';
 import "./AirportDetail.css"
 
@@ -10,6 +11,24 @@ export default function AirportDetails({ airports, toggleFavorite }) {
     const airport = airports.find(a => a.id === airportId);
     const [terminals, setTerminals ] = useState([]);
     const [businesses, setBusinesses] = useState([]);
+
+//for the animation
+    const container = useRef(null); 
+    useEffect(() => {
+        lottie.loadAnimation({
+            animationData: require('../airplane.json'),
+            autoplay: true,
+            container: container.current,
+            loop: true,
+            renderer: 'svg'
+        })
+    }, [])
+
+
+
+
+
+
 
     useEffect(() => {
         async function fetchData() {
@@ -66,6 +85,8 @@ export default function AirportDetails({ airports, toggleFavorite }) {
               </div>
             );
           })}
+            </div>
+            <div ref={container} id="animation-container">
             </div>
         </div>
       );

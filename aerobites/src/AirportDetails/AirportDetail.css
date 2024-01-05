@@ -26,6 +26,14 @@
     background-color: #007B9E; /* shade for hover */
  }
  
+
+ #animation-container {
+    position: fixed;
+    width: 100vw;
+    z-index: -1;
+    top: 80px;   
+ }
+ 
  
  /* Responsive adjustments for smaller screens */
  @media (max-width: 480px) {
