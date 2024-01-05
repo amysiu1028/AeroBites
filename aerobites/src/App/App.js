@@ -13,7 +13,7 @@ import { getAirports, getTerminals, getBusinesses } from '../ApiCalls/ApiCalls'
 
 export default function App() {
   const [airports, setAirports] = useState([]);
-    const [error, setError] = useState("")
+  const [error, setError] = useState("")
 
 
   useEffect(() => {
@@ -49,12 +49,13 @@ export default function App() {
         <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>AeroBites</Link>
         </header>
         <Routes>
-            <Route path="/" element={<Airports airports={airports} />} />
+            <Route path="/" element={<Airports airports={airports} />} 
+            />
             <Route path="/:Id" element={<AirportDetail airports={airports} toggleFavorite={toggleFavorite} />} />
             <Route path="/favorites" element={<FavoritedAirports getFavoriteAirports={getFavoriteAirports} toggleFavorite={toggleFavorite} />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
-        {error && <h2>Something happened with getting the airports.</h2> }
+        {error && <h2 className='error-message'>Something happened with getting the airports.</h2> }
     </main>
   );
 }

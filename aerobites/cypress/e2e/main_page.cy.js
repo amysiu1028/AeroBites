@@ -129,10 +129,6 @@ describe('Airport Details', () => {
     cy.get('.favorite-button').contains('Favorite ❤️').should('exist')
     cy.get('.terminal').should('have.length','8')
   })
-
-  it('should test for 404 network error', () => {
-
-  })
 }); 
 
   

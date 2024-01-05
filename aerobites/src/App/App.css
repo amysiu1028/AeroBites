@@ -19,4 +19,6 @@ body {
   color: white; /* Set default text color to white */
 }
 
-
+.error-container {
+  color: white;
+}
