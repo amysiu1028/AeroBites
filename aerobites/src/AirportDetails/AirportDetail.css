@@ -97,6 +97,12 @@
     .terminal {
       padding: 10px;
     }
+    .terminal > h3 {
+        margin: 0; /* Remove negative margins for smaller screens */
+        border-radius: 10px 10px 0 0; /* Adjust border-radius */
+        padding: 8px; /* Adjust padding */
+    }
+
   }
   
   @media (min-width: 768px) and (max-width: 1024px) {
