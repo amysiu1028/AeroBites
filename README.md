@@ -13,7 +13,7 @@ AeroBites
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Cypress](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
 ![Express](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB=white)
-❗❗
+![Knex.js](https://img.shields.io/badge/knex.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB=green)
 
 ## 👩‍💻 👩‍💻 👨‍💻 👩‍💻 Collaborators
 [Emalee Poellot](https://github.com/em2396)  | 
@@ -23,8 +23,8 @@ AeroBites
 
 </div>
 
-❗❗## 💭 Abstract
-❗❗❗❗❗❗"AeroBites" is a web application designed to...
+## 💭 Abstract
+Our application represents a harmonious synergy between a user-friendly front end and a robust back end. Whether exploring airports, navigating terminals, or discovering restaurants, users can enjoy a seamless and engaging experience facilitated by the thoughtful integration of React, Express, Knex.js, and PostgreSQL technologies.
 
 ## 📝  Context
 We a group of 4 front-end developers working together remotely via Zoom and asynchronously through the GitHub project board to complete this application. This project was completed from week 3 of Mod 3 of the Front End development program at Turing School of Software & Design. 
@@ -39,17 +39,20 @@ We a group of 4 front-end developers working together remotely via Zoom and asyn
 4. Open the app in your web browser by navigating to http://localhost:3000
 
 ## 📚 Learning Goals
-- Gain competency with building a backend API, using express
+- Gain competency with building a backend API, using express and knex.js
 - Use React fundamentals
 - Test React components & asynchronous JS with cypress
 - Practice refactoring
 - Create a multi-page UX using Router
 
-❗❗❗❗## 🥇 Wins
+## 🥇 Wins
 ⭐ Successfully use React and React Router
 ⭐ Working collaboratively as a team to overcome any obstacles and combining our knowledge to create a successful app
 ⭐ Successfully implement cypress testing
+⭐ Getting the backend running and all the data displaying correctly was a big win for all of us. Being able to implement something we had no idea about a week ago was very rewarding.
 
 
 ## 🚧 Challenges
-❗
+❗ When we were working on sample data with knex.js, the functions were all working but when we implemented a larger data set, we had to completely refactor because a simple dataset with hard coded foreign keys won't run into batching restraints. The larger dataset was loading into multiple terminals and we ended up getting over 630,000 objects. Refactoring and understanding how to rewrite it was a major hurdle. 
+❗ When we were learning knex.js, we were doing it in a separate environment than our express server so we got to a point where we had to merge them and realized we had to combine them together. 
+❗ Time wasted, there were times where we went down the wrong paths because we were following directions that had extra things to do that prevented us from going forward. For example, we wasted some time trying to create a table directly in psql. 
