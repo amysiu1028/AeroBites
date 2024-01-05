@@ -10,6 +10,7 @@ export default  function AirportCard({ airport, toggleFavorite }) {
                 {airport.isFavorite ? 'Unfavorite ❤️' : 'Favorite 🤍'}
             </button>
             <div>
+
                 <Link className='link' to={`/${encodeURIComponent(airport.id)}`}>
                 <h3>{airport.name}</h3>
                 </Link>
