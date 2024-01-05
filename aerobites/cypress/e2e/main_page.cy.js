@@ -34,13 +34,19 @@ describe('Airport Details', () => {
   beforeEach(() => {
       // Intercept the initial airports API call
       cy.intercept('GET', 'http://localhost:8080', { 
-        fixture: 'airportdata.json' }).as('getAirports');
+        statusCode: 200, 
+        fixture: 'airportdata.json' 
+      }).as('getAirports');
 
       // Intercept calls for terminals and businesses
       cy.intercept('GET', 'http://localhost:8080/terminals', { 
-        fixture: 'terminalsdata.json' }).as('getTerminals');
+        statusCode: 200, 
+        fixture: 'terminalsdata.json' 
+      }).as('getTerminals');
       cy.intercept('GET', 'http://localhost:8080/businesses', { 
-        fixture: 'businessesdata.json' }).as('getBusinesses');
+        statusCode: 200, 
+        fixture: 'businessesdata.json' 
+      }).as('getBusinesses');
 
       // Visit the main page and wait for the airports to load
       cy.visit('http://localhost:3000');
@@ -56,7 +62,7 @@ describe('Airport Details', () => {
 
   it('should display a airport name and favorite button that can be toggled', () => {
       // Check if Favorites button and link exists
-      cy.contains('h2', 'Show Favorites').should('exist');
+      cy.get('.show-favorites-link').contains('Show Favorites').should('exist');
       cy.contains('h2', 'Hartsfield-Jackson Atlanta International Airport').should('exist');
       cy.contains('button', 'Favorite 🤍').should('exist').click();
       cy.contains('button', 'Favorite ❤️').should('exist').click();
@@ -64,7 +70,6 @@ describe('Airport Details', () => {
   })
 
   it('should fetch and display terminals and businesses for a selected airport', () => {
-
       // Check if terminals and businesses are rendered correctly
       cy.get('.terminals-container').should('exist');
       cy.get('.businesses-container').should('exist');
@@ -96,12 +101,11 @@ describe('Airport Details', () => {
 
   it('should navigate the the favorites page and display favorite card', () => {
       // Favorite and navigate to favorites
-      
       cy.contains('.favorite-button', 'Favorite 🤍').should('exist').click();
-      cy.contains('h2', 'Show Favorites').should('exist').click();
+      cy.get('.show-favorites-link').contains('Show Favorites').should('exist').click();
       // What favorites page contains
       cy.contains('h2', 'Favorited Airports')
-      cy.get('.fav-airport-cont').children().should('have.length', 2);
+      cy.get('.favorites-container').children().should('have.length', 2);
       cy.get('.airport-card').first().should('contain', 'Hartsfield-Jackson Atlanta International Airport')
       cy.get('.airport-card').first().should('contain', 'Unfavorite ❤️')
       cy.get('.airport-card').last().should('contain', 'Dallas-Fort Worth International Airport')
@@ -109,10 +113,9 @@ describe('Airport Details', () => {
 
       //Should unfavorite and clear
       cy.contains('button', 'Unfavorite ❤️').click();
-      cy.get('.fav-airport-cont').children().should('have.length', 1);
+      cy.get('.favorites-container').children().should('have.length', 1);
       cy.get('.airport-card').first().should('contain', 'Dallas-Fort Worth International Airport')
       cy.get('.airport-card').first().should('contain', 'Unfavorite ❤️')
-
   })
    
 }); 
