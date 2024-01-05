@@ -52,4 +52,6 @@ body {background-color: rgb(17, 15, 21);
   margin-top: 170px;
 }
 
-
+.error-container {
+  color: white;
+}

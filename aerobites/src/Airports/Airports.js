@@ -44,7 +44,6 @@ export default function Airports({ airports }) {
 }
 
 
-
 Airports.propTypes = {
     airports: PropTypes.arrayOf(
       PropTypes.shape({
