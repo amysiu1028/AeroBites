@@ -13,7 +13,7 @@ AeroBites
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Cypress](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
 ![Express](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB=white)
-![Knex.js](https://img.shields.io/badge/knex.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB=green)
+
 
 ## 👩‍💻 👩‍💻 👨‍💻 👩‍💻 Collaborators
 [Emalee Poellot](https://github.com/em2396)  | 
