@@ -45,7 +45,7 @@ export default function App() {
 
   return (
     <main className='App'>
-        <header>
+        <header className='app-header'>
         <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>AeroBites</Link>
         </header>
         <Routes>
