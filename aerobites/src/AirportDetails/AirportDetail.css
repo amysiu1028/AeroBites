@@ -1,13 +1,13 @@
+/* General styles */
 .show-favorites-link {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
     display: inline-block;
     margin-bottom: 10px;
- }
- 
- 
- .airport-details button {
+  }
+  
+  .airport-details button {
     background-color: #008CBA;
     color: white;
     border: none;
@@ -17,43 +17,92 @@
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
- }
- 
- 
- 
- 
- .airport-details button:hover {
-    background-color: #007B9E; /* shade for hover */
- }
- 
-
- #animation-container {
+  }
+  
+  .airport-details button:hover {
+    background-color: #007B9E; /* Darker shade for hover */
+  }
+  
+  #animation-container {
     position: fixed;
     width: 100vw;
     z-index: -1;
-    top: 80px;   
- }
- 
- 
- /* Responsive adjustments for smaller screens */
- @media (max-width: 480px) {
+    top: 80px;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 480px) {
     .airport-details .show-favorites-link {
-        font-size: 1em;
+      font-size: 1em;
     }
     .airport-details button {
-        padding: 8px 16px;
+      padding: 8px 16px;
     }
- }
- 
- 
- /* Media Query for iPad screens */
- @media (min-width: 768px) and (max-width: 1024px) {
+  }
+  
+  /* Media Query for iPad screens */
+  @media (min-width: 768px) and (max-width: 1024px) {
     .airport-details .show-favorites-link {
-        font-size: 1.4em;
+      font-size: 1.4em;
     }
     .airport-details button {
-        padding: 12px 24px;
-        font-size: 1.1em;
+      padding: 12px 24px;
+      font-size: 1.1em;
     }
- }
- 
+  }
+  
+  /* Style for the terminals container */
+  .terminals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Style for each terminal card */
+  .terminal {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark text for better readability */
+  }
+  
+  /* Style for the header of each terminal */
+  .terminal > h3 {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin: -15px -15px 15px -15px;
+    border-radius: 15px 15px 0 0;
+    color: #111; /* Even darker text for headers */
+  }
+  
+  /* Style for the list of businesses */
+  .businesses-container {
+    text-align: left;
+  }
+  
+  /* Style for each business name */
+  .businesses-container p {
+    margin: 5px 0;
+    color: #222; /* Dark text for business names */
+  }
+  
+  /* Additional responsive adjustments */
+  @media (max-width: 480px) {
+    .terminals-container {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .terminal {
+      padding: 10px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .terminals-container {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for iPad screens */
+      gap: 15px;
+    }
+  }
+  
