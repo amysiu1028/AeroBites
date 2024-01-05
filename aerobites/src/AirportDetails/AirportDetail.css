@@ -1,4 +1,4 @@
-/* General styles */
+
 .show-favorites-link {
     color: white;
     text-decoration: none;
@@ -20,7 +20,7 @@
   }
   
   .airport-details button:hover {
-    background-color: #007B9E; /* Darker shade for hover */
+    background-color: #007B9E;
   }
   
   #animation-container {
@@ -30,7 +30,7 @@
     top: 80px;
   }
   
-  /* Responsive adjustments for smaller screens */
+  /* Adjustments for smaller screens */
   @media (max-width: 480px) {
     .airport-details .show-favorites-link {
       font-size: 1em;
@@ -51,41 +51,41 @@
     }
   }
   
-  /* Style for the terminals container */
+
   .terminals-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
   }
   
-  /* Style for each terminal card */
+  
   .terminal {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333; /* Dark text for better readability */
+    color: #333; 
   }
   
-  /* Style for the header of each terminal */
+ 
   .terminal > h3 {
     background-color: #f7f7f7;
     padding: 10px;
     margin: -15px -15px 15px -15px;
     border-radius: 15px 15px 0 0;
-    color: #111; /* Even darker text for headers */
+    color: #111; 
   }
   
-  /* Style for the list of businesses */
+  
   .businesses-container {
-    text-align: left;
+    text-align: center;
   }
   
-  /* Style for each business name */
+  
   .businesses-container p {
     margin: 5px 0;
-    color: #222; /* Dark text for business names */
+    color: #222; 
   }
   
   /* Additional responsive adjustments */
