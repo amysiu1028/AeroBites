@@ -34,7 +34,7 @@ We a group of 4 front-end developers working together remotely via Zoom and asyn
 https://github.com/amysiu1028/AeroBites/assets/140124108/9ef9a247-bded-4b60-afbe-6ff200757066
 
 ## Link: 
-[Live Github Link]([https://aerobites-app.vercel.app/])
+[Live Github Link](https://aerobites-app.vercel.app/)
 
 ## 🔌 Server Setup
 1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository: `git clone (copied link)`
