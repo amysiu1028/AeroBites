@@ -54,15 +54,12 @@ body {
   margin-top: 170px;
 }
 
-
-/* Media Query for iPhone screens */
 @media (max-width: 480px) {
   header {
     font-size: 60px; 
   }
 }
 
-/* Media Query for iPad screens */
 @media (min-width: 768px) and (max-width: 1024px) {
   header {
     font-size: 80px; 

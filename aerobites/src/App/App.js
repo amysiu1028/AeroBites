@@ -9,8 +9,6 @@ import FavoritedAirports from '../FavoritedAirports/FavoritedAirports';
 import NotFound from '../NotFound/NotFound';
 import { getAirports, getTerminals, getBusinesses } from '../ApiCalls/ApiCalls'
 
-// import getAirports from '../ApiCalls/ApiCalls
-
 export default function App() {
   const [airports, setAirports] = useState([]);
   const [error, setError] = useState("")
@@ -27,7 +25,6 @@ export default function App() {
       })
   },[])
 
-  // name is passed from AirportCard and AirportDetails when toggleFavorite is clicked
   const toggleFavorite = (name) => {
       const updatedAirports = airports.map(airport => {
           if (airport.name === name) {
@@ -38,7 +35,6 @@ export default function App() {
       setAirports(updatedAirports);   
   };
 
-  // filter favorite airports so you just have an array of favorites
   const getFavoriteAirports = () => {
       return airports.filter(airport => airport.isFavorite);
   };

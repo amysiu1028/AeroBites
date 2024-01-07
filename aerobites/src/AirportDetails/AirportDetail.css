@@ -30,7 +30,6 @@
     top: 80px;
   }
   
-  /* Adjustments for smaller screens */
   @media (max-width: 480px) {
     .airport-details .show-favorites-link {
       font-size: 1em;
@@ -88,7 +87,6 @@
     color: #222; 
   }
   
-  /* Additional responsive adjustments */
   @media (max-width: 480px) {
     .terminals-container {
       grid-template-columns: 1fr;
@@ -98,16 +96,16 @@
       padding: 10px;
     }
     .terminal > h3 {
-        margin: 0; /* Remove negative margins for smaller screens */
-        border-radius: 10px 10px 0 0; /* Adjust border-radius */
-        padding: 8px; /* Adjust padding */
+        margin: 0; 
+        border-radius: 10px 10px 0 0;
+        padding: 8px; 
     }
 
   }
   
   @media (min-width: 768px) and (max-width: 1024px) {
     .terminals-container {
-      grid-template-columns: repeat(2, 1fr); /* Two columns for iPad screens */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 15px;
     }
   }
