@@ -11,8 +11,9 @@ AeroBites
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-![Cypress](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
+![Cypress](https://img.shields.io/badge/-cypress-%238D6748?style=for-the-badge&logo=cypress&logoColor=white)
 ![Express](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB=white)
+![Knex](https://img.shields.io/badge/knex.js-%23404d59.svg?style=for-the-badge&logo=knex&logoColor=%2361DAFB=white)
 
 
 ## 👩‍💻 👩‍💻 👨‍💻 👩‍💻 Collaborators
