@@ -44,7 +44,6 @@
     z-index: -1;
 }
 
-/* Media Query for smaller screens */
 @media (max-width: 480px) {
     .controls-container {
         flex-direction: column;

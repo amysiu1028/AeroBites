@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { useNavigate, Link } from 'react-router-dom';
 
 export default function Airports({ airports }) {
-    // directs to page just like a link
     const navigate = useNavigate();
     const handleDropdownChange = (event) => {
         const selectedId = event.target.value;

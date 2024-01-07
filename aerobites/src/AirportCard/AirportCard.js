@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './AirportCard.css';
 
 export default  function AirportCard({ airport, toggleFavorite }) {
-    //  a card with airport details and favorite toggle button
     return (
         <div className='airport-card'>
             <button onClick={() => toggleFavorite(airport.name)}>

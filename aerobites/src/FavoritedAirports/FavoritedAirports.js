@@ -4,11 +4,8 @@ import PropTypes from 'prop-types';
 import AirportCard from '../AirportCard/AirportCard';
 import lottie from "lottie-web";
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-                    //just the favorite airports
+
 const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
-
-
     const container = useRef(null); 
     useEffect(() => {
         lottie.loadAnimation({
@@ -39,7 +36,6 @@ const FavoriteAirports = ({ getFavoriteAirports, toggleFavorite }) => {
         </div>
     );
 };
-
 
 FavoriteAirports.propTypes = {
     getFavoriteAirports: PropTypes.func.isRequired, 

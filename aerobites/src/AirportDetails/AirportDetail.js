@@ -12,7 +12,6 @@ export default function AirportDetails({ airports, toggleFavorite }) {
     const [terminals, setTerminals ] = useState([]);
     const [businesses, setBusinesses] = useState([]);
 
-//for the animation
     const container = useRef(null); 
     useEffect(() => {
         lottie.loadAnimation({
@@ -24,20 +23,12 @@ export default function AirportDetails({ airports, toggleFavorite }) {
         })
     }, [])
 
-
-
-
-
-
-
     useEffect(() => {
         async function fetchData() {
             try {
-                // First, fetch terminals data
                 const terminalsData = await getTerminals();
                 const filteredTerminals = terminalsData.filter(terminal => terminal.airport_id === airportId);
                 setTerminals(filteredTerminals);
-                // Check if there are terminals to fetch businesses for
                 if (filteredTerminals.length > 0) {
                     const businessesData = await getBusinesses();
                     const filteredBusinesses = businessesData.filter(business =>
@@ -63,15 +54,14 @@ export default function AirportDetails({ airports, toggleFavorite }) {
           <button className='favorite-button' onClick={() => toggleFavorite(airport.name)}>
             {airport.isFavorite ? 'Favorite ❤️' : 'Favorite 🤍'}
           </button>
-          <div className='terminals-container'> {/* to wrap all of the terminals in a container */}
+          <div className='terminals-container'> 
           {terminals.map(terminal => {
-            // Filter businesses for the current terminal
             const terminalBusinesses = businesses.filter(business => business.terminal_id === terminal.id);
       
             return (
               <div key={terminal.id} className='terminal'>
                 <h3>{terminal.terminalName}</h3>
-                <div className='businesses-container'> {/* to wrap all of the businesses */}
+                <div className='businesses-container'> 
                 {terminalBusinesses.length > 0 ? (
                   <div className='businesses'>
                     {terminalBusinesses.map(business => (

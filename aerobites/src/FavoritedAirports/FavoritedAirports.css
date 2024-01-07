@@ -5,7 +5,6 @@
     margin-top: -20px;
  }
  
- 
  .favorites h2 {
    
     color: white;
@@ -13,7 +12,6 @@
     margin: 0;
     width: 100%;
  }
- 
  
  .favorites-container {
     display: grid;
@@ -56,12 +54,6 @@
  
  }
  
- 
- 
- 
- 
- 
- /* Media Query for iPad screens */
  @media (min-width: 768px) and (max-width: 1024px) {
     .favorites-container {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

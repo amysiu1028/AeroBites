@@ -1,19 +1,15 @@
-//final https://aerobites-app-fa488b45d1f9.herokuapp.com
-
 function getAirports() {
-    return fetch('http://localhost:8080')
+    return fetch('https://aerobites-app-fa488b45d1f9.herokuapp.com')
         .then(response => {
             if(!response.ok) {
-                // throw new Error (`${error}: Failed to fetch data`)
                 console.log('error')
             }
-            // console.log(response.json())
             return response.json();
         })
 }
 
 function getTerminals() {
-    return fetch('http://localhost:8080/terminals')
+    return fetch('https://aerobites-app-fa488b45d1f9.herokuapp.com/terminals')
         .then(response => {
             if(!response.ok) {
                 console.log('error')
@@ -23,7 +19,7 @@ function getTerminals() {
 }
 
 function getBusinesses() {
-    return fetch('http://localhost:8080/businesses')
+    return fetch('https://aerobites-app-fa488b45d1f9.herokuapp.com/businesses')
     .then(response => {
         if(!response.ok) {
             console.log('error')
@@ -31,7 +27,5 @@ function getBusinesses() {
         return response.json();
     })
 }
-
-
 
 export { getAirports, getTerminals, getBusinesses }
