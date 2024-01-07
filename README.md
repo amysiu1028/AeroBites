@@ -29,8 +29,11 @@ Our application represents a harmonious synergy between a user-friendly front en
 ## 📝  Context
 We a group of 4 front-end developers working together remotely via Zoom and asynchronously through the GitHub project board to complete this application. This project was completed from week 3 of Mod 3 of the Front End development program at Turing School of Software & Design. 
 
-❗❗## 🎥 Preview 
-❗❗❗❗❗❗ADD HERE!
+## 🎥 Preview 
+https://github.com/amysiu1028/AeroBites/assets/140124108/9ef9a247-bded-4b60-afbe-6ff200757066
+
+## Link: 
+[Live Github Link](https://aerobites-ioh3ctq6t-amy-sius-projects.vercel.app/)
 
 ## 🔌 Server Setup
 1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository: `git clone (copied link)`
