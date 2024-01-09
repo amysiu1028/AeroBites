@@ -1,6 +1,6 @@
 describe('Display header on page load and drop down of airports', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:8080", {
+    cy.intercept("GET", "https://aerobites-app-fa488b45d1f9.herokuapp.com", {
         statusCode: 200, 
         fixture: 'airportdata.json'
     })
@@ -24,16 +24,16 @@ it('should display a dropdown with airports', () => {
 
 describe('Airport Details', () => {
   beforeEach(() => {
-      cy.intercept('GET', 'http://localhost:8080', { 
+      cy.intercept('GET', 'https://aerobites-app-fa488b45d1f9.herokuapp.com', { 
         statusCode: 200, 
         fixture: 'airportdata.json' 
       }).as('getAirports');
 
-      cy.intercept('GET', 'http://localhost:8080/terminals', { 
+      cy.intercept('GET', 'https://aerobites-app-fa488b45d1f9.herokuapp.com/terminals', { 
         statusCode: 200, 
         fixture: 'terminalsdata.json' 
       }).as('getTerminals');
-      cy.intercept('GET', 'http://localhost:8080/businesses', { 
+      cy.intercept('GET', 'https://aerobites-app-fa488b45d1f9.herokuapp.com/businesses', { 
         statusCode: 200, 
         fixture: 'businessesdata.json' 
       }).as('getBusinesses');
@@ -107,7 +107,7 @@ describe('Airport Details', () => {
    
   it('should be able to click onto the favorited airport card on favorites page, and navigate to that airport details page', () => {
     cy.get('.show-favorites-link').contains('Show Favorites').should('exist').click();
-    cy.get('.favoritedairport-link').contains('Dallas-Fort Worth International Airport').should('exist').click();
+    cy.get('.favorites-container').contains('Dallas-Fort Worth International Airport').should('exist').click();
     cy.get('.show-favorites-link').contains('Show Favorites').should('exist');
     cy.get('h2').contains('Dallas-Fort Worth International Airport')
     cy.get('.favorite-button').contains('Favorite ❤️').should('exist')
