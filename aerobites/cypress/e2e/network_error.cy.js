@@ -1,6 +1,6 @@
 describe('Network Errors', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://localhost:8080', {
+    cy.intercept('GET', 'https://aerobites-app-fa488b45d1f9.herokuapp.com', {
       statusCode: 500,  
     }).as('HomeErrorpage')
     cy.visit('http://localhost:3000/')
@@ -12,7 +12,7 @@ describe('Network Errors', () => {
   })
 
   it('should test for 404 network error', () => {
-    cy.intercept('GET', 'http://localhost:8080', {
+    cy.intercept('GET', 'https://aerobites-app-fa488b45d1f9.herokuapp.com', {
       statusCode: 404,  
     }).as('NotFoundPage')
     cy.visit('http://localhost:3000/1/*')
